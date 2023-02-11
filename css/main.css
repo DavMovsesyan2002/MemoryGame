@@ -1,0 +1,190 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #ffffff url('../img/geometry2.png'); /* Background pattern from Subtle Patterns */
+  font-family: 'Coda', cursive;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+h1 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+}
+
+/*
+ * Styles for the deck of cards
+ */
+
+.deck {
+  width: 660px;
+  min-height: 680px;
+  background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
+  padding: 32px;
+  border-radius: 10px;
+  box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 0 3em;
+}
+
+.deck .card {
+  height: 125px;
+  width: 125px;
+  background: linear-gradient(160deg, #3C384D 0%, #ffffff 450%);
+  font-size: 0;
+  color: #ffffff;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+  animation: flash-light-gry 0.3s;
+
+}
+
+.deck .card.open {
+  background: #02b3e4;
+  cursor: default;
+  animation: flash-grn 0.3s;
+}
+
+.deck .card.show {
+  font-size: 33px;
+}
+
+.deck .card.match {
+  cursor: default;
+  background: #02ccba;
+  font-size: 33px;
+  animation: flash-pnk 0.5s;
+}
+
+/*
+ * Styles for the Score Panel
+ */
+
+.score-panel {
+
+  text-align: center;
+  width: 660px;
+  padding-left: 32px;
+  padding-right: 32px;
+  margin-bottom: 10px;
+}
+
+.score-panel .stars {
+  float: left;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  margin: 0 5px 0 0;
+}
+
+.score-panel .stars li {
+  list-style: none;
+  display: inline-block;
+}
+
+.moves {
+  padding-left: 5px;
+  float: left;
+}
+
+.score-panel .restart {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.time-container {
+  width: 85px;
+  float: right;
+  display: inline-block;
+}
+
+#time-counter {
+  float: left;
+}
+
+.blink-1 {
+  animation: blink 1.9s;
+}
+
+.blink-2 {
+  animation: blink 0.6s;
+}
+
+.blink-3 {
+  background: red;
+  box-shadow: 0 0 10px 3px red;
+
+}
+
+/*
+Animations
+ */
+
+@keyframes flash-light-gry {
+  0% {
+    background-color: #e36153;
+    transform: matrix(-0.866, -0.5, 0.5, 0.866, 0, 0);
+  }
+  100% {
+    background: #e36153;
+    transform: translate(0,0);
+  }
+}
+
+@keyframes flash-grn {
+  0% {
+    background-color: #3c384d;
+  }
+  100% {
+    background-color: #02ccba;
+    transform: rotateX(360deg);
+  }
+}
+
+@keyframes flash-pnk {
+  0% {
+    background-color: #00Bfff;
+  }
+  100% {
+    background-color: #ff00Bf ;
+    transform: rotateY(360deg);
+  }
+}
+
+@keyframes blink {
+  0% {
+    background: red;
+    box-shadow: 0 0 10px 3px red;
+  }
+  100% {
+    background-color: #FFF;
+  }
+}

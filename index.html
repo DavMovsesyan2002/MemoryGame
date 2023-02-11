@@ -1,0 +1,49 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+  <meta charset="utf-8">
+  <title>Memory Game</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <meta name="theme-color" content="#fafafa">
+  <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+  <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Coda">
+</head>
+<body>
+
+<div class="container">
+  <header class="row text-center">
+    <h1 class="col pt-2 mt-2">Memory Match</h1>
+  </header>
+
+  <section class="row score-panel">
+    <div class="col-3 m-0 p-2 text-center" title="Attempted matches">
+      <span class="moves"></span>
+      <span class="moves-label"></span>
+    </div>
+
+    <div class="col-3 m-0 p-2 text-center" title="Time elapsed">
+      <span class="timer"></span>
+      <span class="timer-label"></span>
+    </div>
+
+    <div class="restart col-3 m-0 p-2 text-right" title="Start over">
+      <i class="fas fa-redo"></i>
+    </div>
+  </section>
+
+  <ul class="row deck p-4">
+    <!-- Created dynamically via js/main.js -->
+  </ul>
+</div>
+<script src="js/main.js"></script>
+</body>
+</html>
